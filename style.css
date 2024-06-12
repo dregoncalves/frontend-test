@@ -1,4 +1,5 @@
 :root {
+  --dark-text-green: #0C261C;
   --dark-green: #15573f;
   --light-green: #75bc97;
   --soft-orange: #fd9872;
@@ -43,10 +44,14 @@ html {
 }
 
 .person-plants-img {
-  max-width: 75%;
+  max-width: 65%;
   position: absolute;
-  top: 80%;
+  top: 75%;
   z-index: 0;
+}
+
+.right-leaves {
+  right: 0;
 }
 
 .header-content {
@@ -95,6 +100,11 @@ html {
   max-width: 30%;
 }
 
+/* inversão da imagem de regador */
+.wateringcan {
+  transform: scaleX(-1);
+}
+
 .option-label {
   color: var(--primary-grey);
   font-size: 14px;
@@ -109,7 +119,6 @@ html {
   width: 100%;
 }
 
-.option-input:focus-visible,
 .option-input:focus {
   border: 2px solid var(--second-grey);
 }
@@ -132,7 +141,7 @@ html {
 
 .card {
     margin: 1em auto;
-    width: 100%;
+    min-width: 90%;
     background-color: white;
     padding: 1em 1.25em;
     width: fit-content;
@@ -141,11 +150,65 @@ html {
     flex-direction: column;
     gap: 1em;
     color: var(--dark-green);
+    justify-content: space-between;
 }
 
 .card img {
-    max-width: 80%;
+    max-width: 200px;
+    height: 200px;
     align-self: center;
+}
+
+.result-header {
+  padding-top: 3em;
+  max-width: 70%;
+  margin: 0 auto;
+}
+
+.result-header div {
+  display: flex;
+  flex-flow: column;
+  gap: 20px;
+}
+
+.pick-image {
+  width: 10em;
+}
+
+.pick-title {
+  font-size: 55px;
+  color: var(--dark-text-green);
+  width: 80%;
+}
+
+.no-results {
+  max-width: 70%;
+  margin: 0 auto;
+  display: flex;
+  gap: 15em;  
+  padding-top: 4.5em;
+}
+
+.no-results div {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  color: var(--second-grey);
+}
+
+.no-results p {
+  font-size: 16px;
+  line-height: 1.5em;
+  font-weight: 500;
+}
+
+.no-results h2 {
+  font-size: 45px;
+}
+
+.no-results img {
+  max-width: 25%;
+  align-self: center;
 }
 
 
@@ -156,7 +219,6 @@ html {
 }
 
 @media only screen and (min-width: 600px) {
-
     .header {
         height: 60vh;
         width: 100vw;
@@ -164,6 +226,7 @@ html {
 
     .header-content {
         top: 15%;
+        left: 15%;
     }
 
     .header-text {
@@ -189,10 +252,6 @@ html {
         z-index: 1;
     }
 
-    .right-leaves {
-        right: 0;
-    }
-
     .left-leaves {
         left: 0;
     }
@@ -206,7 +265,7 @@ html {
 
     .main-content {
         flex-direction: row;
-        max-width: 70%;
+        max-width: 73%;
         margin: 4rem auto;
         height: auto;
     }
@@ -215,22 +274,31 @@ html {
         justify-content: space-between;
         width: 30%;
     }
-    
+
 }
 
-@media only screen and (min-width: 900px) {
-    main {
-        width: 100vw;
-        height: 100vh;
-    }
-
+@media only screen and (max-width: 950px) {
     .person-plants-img {
         right: 20%;
     }
 
+    .left-leaves {
+      width: 60%;
+  }
+
     .header-content {
-        left: 18%;
+        left: 15%;
     }
+
+    .right-leaves {
+      width: 40%;
+  }
+
+  .no-results {
+    flex-direction: column;
+    gap: 2em;
+  }
+
 }
 
 @media only screen and (max-width: 1440px) {    
@@ -238,11 +306,8 @@ html {
         left: -10%;
     }
 
-    .right-leaves {
-        right: -10%;
-    }
-
     .person-plants-img {
-        right: 10%;
+        right: 12%;
     }
+    
 }
