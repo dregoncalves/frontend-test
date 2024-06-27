@@ -30,8 +30,8 @@ document.addEventListener("DOMContentLoaded", function () {
           const waterCondition = water === "none" || planta.water === water;
           const petCondition =
             pet === "none" ||
-            (planta.toxicity && pet === "true") ||
-            (!planta.toxicity && pet === "false");
+            (planta.toxicity && pet === "false") ||
+            (!planta.toxicity && pet === "true");
 
           return sunlightCondition && waterCondition && petCondition;
         });
